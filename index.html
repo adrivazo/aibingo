@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>MIT AI Conference 2025 - IHTFP Bingo Challenge</title>
+    <meta name="description" content="Win an Oura Ring at MIT AI Conference 2025! Complete bingo challenges to enter the raffle.">
+    <meta name="theme-color" content="#FF00FF">
     <style>
         * {
             margin: 0;
@@ -223,18 +225,105 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
             h1 {
-                font-size: 1.8em;
+                font-size: 1.6em;
+            }
+            .subtitle {
+                font-size: 1em;
+            }
+            .tagline {
+                font-size: 0.95em;
             }
             .bingo-grid {
-                gap: 5px;
+                gap: 4px;
+                max-width: 100%;
             }
             .cell {
-                font-size: 0.6em;
-                padding: 5px;
+                font-size: 0.5em;
+                padding: 3px;
+                border-width: 1.5px;
+                border-radius: 6px;
+                min-height: 60px;
             }
             .cell.header-cell {
+                font-size: 1.3em;
+                min-height: 40px;
+            }
+            .cell.fire-challenge::after {
+                font-size: 0.9em;
+                top: 2px;
+                right: 2px;
+            }
+            .challenge-text {
+                font-size: 0.85em;
+                line-height: 1.2;
+                padding: 2px;
+            }
+            .cell.free-space {
+                font-size: 0.7em;
+            }
+            .instructions {
+                padding: 15px;
+                margin: 20px 0;
+            }
+            .instructions h3 {
+                font-size: 1.1em;
+            }
+            .lottery-levels {
+                gap: 10px;
+            }
+            .lottery-level {
+                padding: 10px;
+            }
+            .lottery-level .entries {
                 font-size: 1.5em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+                border-radius: 15px;
+            }
+            h1 {
+                font-size: 1.4em;
+                margin-bottom: 5px;
+            }
+            .header {
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+            }
+            .bingo-grid {
+                gap: 3px;
+            }
+            .cell {
+                font-size: 0.42em;
+                padding: 2px;
+                min-height: 55px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .challenge-text {
+                font-size: 0.9em;
+                line-height: 1.15;
+                word-break: break-word;
+                hyphens: auto;
+            }
+            .cell.header-cell {
+                font-size: 1.2em;
+                min-height: 35px;
+            }
+            .cell.free-space {
+                font-size: 0.6em;
+                line-height: 1;
+            }
+            .puzzle-box {
+                padding: 15px;
+                font-size: 0.9em;
             }
         }
     </style>
