@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT AI Conference 2025 - IHTFP Bingo Challenge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #FF00FF;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #FF00FF, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: #FF00FF;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .bingo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 30px auto;
+            max-width: 900px;
+        }
+
+        .cell {
+            aspect-ratio: 1;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+            position: relative;
+            font-size: 0.75em;
+            overflow: hidden;
+        }
+
+        .cell:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #FF00FF;
+        }
+
+        .cell.header-cell {
+            background: linear-gradient(135deg, #FF00FF, #764ba2);
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        .cell.header-cell:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .cell.free-space {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .cell.fire-challenge {
+            background: linear-gradient(135deg, #fff, #ffe6e6);
+            border: 2px solid #ff4444;
+        }
+
+        .cell.fire-challenge::after {
+            content: "🔥";
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 1.2em;
+        }
+
+        .cell.checked {
+            background: #e8f5e9;
+            border-color: #4caf50;
+        }
+
+        .cell.checked::before {
+            content: "✓";
+            position: absolute;
+            font-size: 3em;
+            color: #4caf50;
+            opacity: 0.3;
+        }
+
+        .challenge-text {
+            font-size: 0.9em;
+            line-height: 1.3;
+            color: #333;
+            padding: 5px;
+        }
+
+        .instructions {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .instructions h3 {
+            color: #FF00FF;
+            margin-bottom: 15px;
+        }
+
+        .puzzle-box {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            border: 2px dashed #764ba2;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .lottery-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .lottery-level {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .lottery-level .entries {
+            font-size: 2em;
+            color: #FF00FF;
+            font-weight: bold;
+        }
+
+        .fire-walker {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            border-color: #ff4444;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .fine-print {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-style: italic;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                padding: 10px;
+            }
+            .cell {
+                font-size: 0.65em;
+            }
+            .instructions, .fine-print {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            .bingo-grid {
+                gap: 5px;
+            }
+            .cell {
+                font-size: 0.6em;
+                padding: 5px;
+            }
+            .cell.header-cell {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MIT AI Conference 2025</h1>
+            <div class="subtitle">IHTFP* Bingo Challenge</div>
+            <div class="tagline">Complete ANY row AND column to enter the Oura Ring raffle!</div>
+            <div style="font-size: 0.9em; color: #888; margin-top: 10px;">3 winners will be drawn! Submit evidence by 6:45 PM to bingo@mitaiconference.org</div>
+        </div>
+
+        <div class="bingo-grid">
+            <!-- Headers -->
+            <div class="cell header-cell">I</div>
+            <div class="cell header-cell">H</div>
+            <div class="cell header-cell">T</div>
+            <div class="cell header-cell">F</div>
+            <div class="cell header-cell">P</div>
+
+            <!-- Row 1 -->
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Attend 8:15 AM Expert Round Table (photo with table A-E)</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Get business cards from 3 vendor booths</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Submit Slido question that gets answered</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Post on LinkedIn with #MITAIConference + @MITAS</div>
+            </div>
+            <div class="cell fire-challenge" onclick="toggleCell(this)">
+                <div class="challenge-text">Spot TIM-A in afternoon slide</div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Selfie with robot demo + post on LinkedIn</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Attend Hemant Taneja's Fireside</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Attend the cofounder speed matching workshop</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Coffee & Connect photo with 5+ contacts</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Get quoted in someone's LinkedIn post</div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Find birthday twin in AI</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Watch 3 hackathon demos & rank by ARR</div>
+            </div>
+            <div class="cell free-space">
+                <div class="challenge-text">FREE SPACE<br>Show badge</div>
+            </div>
+            <div class="cell fire-challenge" onclick="toggleCell(this)">
+                <div class="challenge-text">LinkedIn post: 50+ engagements by 6 PM</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Take professional headshot</div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Attend in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
+            </div>
+            <div class="cell fire-challenge" onclick="toggleCell(this)">
+                <div class="challenge-text">Get cards from 3 VCs</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Appear in AI Awards crowd photo (6 PM)</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Share Refik Anadol insight on Twitter</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Tweet Research Slam in ≤18 words</div>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="cell fire-challenge" onclick="toggleCell(this)">
+                <div class="challenge-text">Find TIM costume alumni + selfie</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Collect swag from 5+ booths</div>
+            </div>
+            <div class="cell fire-challenge" onclick="toggleCell(this)">
+                <div class="challenge-text">Get panelist book/paper recommendation on video</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Stay ENTIRE day (8 AM + 6:35 PM photos)</div>
+            </div>
+            <div class="cell" onclick="toggleCell(this)">
+                <div class="challenge-text">Scan 5+ LinkedIn QR codes</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>🧩 VERIFICATION PUZZLE (Required for Entry)</h3>
+            <div class="puzzle-box">
+                <p><strong>What's the magic number?</strong></p>
+                <ul style="list-style: none; padding: 10px 0;">
+                    <li>Number of Fireside Chats on agenda: ___</li>
+                    <li>× Number of Expert Round Tables: ___</li>
+                    <li>+ Hour when AI Awards begin (24hr): ___</li>
+                    <li>− Number of Coffee & Connect breaks: ___</li>
+                    <li><strong>= Your answer: _____</strong></li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 0.9em;">
+                    <strong>Email Subject:</strong> BINGO-[MagicNumber]-[BadgeID]
+                </p>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>💍 Prize Drawing Entries</h3>
+            <div class="lottery-levels">
+                <div class="lottery-level">
+                    <div class="entries">1</div>
+                    <div>Entry</div>
+                    <small>1 row + 1 column</small>
+                </div>
+                <div class="lottery-level">
+                    <div class="entries">3</div>
+                    <div>Entries</div>
+                    <small>2 rows + 2 columns</small>
+                </div>
+                <div class="lottery-level">
+                    <div class="entries">5</div>
+                    <div>Entries</div>
+                    <small>3 lines total</small>
+                </div>
+                <div class="lottery-level">
+                    <div class="entries">10</div>
+                    <div>Entries</div>
+                    <small>Complete board</small>
+                </div>
+                <div class="lottery-level fire-walker">
+                    <div class="entries">15</div>
+                    <div>Entries</div>
+                    <small><strong>FIRE WALKER</strong><br>All 5 🔥 challenges</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>🔥 Special Fire Challenges</h3>
+            <ul style="line-height: 1.8;">
+                <li><strong>TIM-A Spotter:</strong> Find TIM-A the Beaverette (TIM's cousin with pink bow) in afternoon slide</li>
+                <li><strong>50+ Engagement Master:</strong> LinkedIn post with 50+ reactions by 6 PM</li>
+                <li><strong>VC Collector:</strong> Business cards from 3 real VCs (not crypto bros)</li>
+                <li><strong>TIM Alumni Hunter:</strong> Find someone who wore the costume + proof</li>
+                <li><strong>Q&A Champion:</strong> Capture panelist book/paper recommendation on video</li>
+            </ul>
+        </div>
+
+        <div class="fine-print">
+            <strong>Submission:</strong> bingo@mitaiconference.org by 6:45 PM | Include grid coordinates (e.g., "Row 3 + Column H")<br><br>
+            *Yes, we know what IHTFP means. No, we won't tell the sponsors.<br><br>
+            Fine print: 3 Oura Ring winners will be drawn at 8 PM using MIT atomic clock randomization. Prize is latest generation Oura Ring (retail value ~$349) or equivalent wellness tech. TIM-A the Beaverette is definitely not avoiding trademark issues with TIM the Beaver™. She's her own beaver. With a bow. Totally different. "VC" means real venture capital funds, not your roommate who bought Dogecoin at the peak, not your uncle's "investment club," and definitely not anyone whose business card says "Serial Entrepreneur/Thought Leader/Crypto Visionary." Fire Walker status requires cryptographic proof of all 5 challenges and enters you in drawing 15 times. The 18-word limit honors Course 18 (Mathematics). Former TIM wearers: we salute your sweaty dedication. Tom Hale from Oura is speaking at 10:05 AM - coincidence? We think not.
+        </div>
+    </div>
+
+    <script>
+        function toggleCell(cell) {
+            if (cell.classList.contains('free-space') || cell.classList.contains('header-cell')) {
+                return;
+            }
+            cell.classList.toggle('checked');
+        }
+
+        // Add some MIT easter eggs
+        console.log('%c IHTFP BINGO', 'color: #FF00FF; font-size: 30px; font-weight: bold;');
+        console.log('%c You found the console! Course 6 student detected? 🦫', 'color: #764ba2; font-size: 14px;');
+    </script>
+</body>
+</html>
