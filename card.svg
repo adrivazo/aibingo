@@ -1,0 +1,30 @@
+<svg width="750" height="1050" viewBox="0 0 750 1050" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="750" height="1050" rx="40" fill="#000000"/>
+
+  <!-- MIT AI Logo -->
+  <!-- Replace this <text> with the actual MITAI logo SVG or embed your PNG -->
+  <text x="50%" y="140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-weight="700" font-size="120">
+    <tspan fill="#ffffff">MIT</tspan><tspan fill="#ff00b9">AI</tspan>
+  </text>
+
+  <!-- Divider line -->
+  <line x1="80" y1="200" x2="670" y2="200" stroke="#666" stroke-width="2" opacity="0.4"/>
+
+  <!-- Question container -->
+  <rect x="80" y="240" width="590" height="680" rx="20" fill="#ffffff"/>
+
+  <!-- Suit and Question Number -->
+  <text x="120" y="310" font-family="Helvetica, Arial, sans-serif" font-weight="600"
+        font-size="36" fill="#000000">♠ Question 1</text>
+
+  <!-- Question Text -->
+  <foreignObject x="110" y="360" width="530" height="520">
+    <div xmlns="http://www.w3.org/1999/xhtml"
+         style="font-family: Helvetica, Arial, sans-serif; font-size: 32px; line-height: 1.4; color: #000;">
+      What do you wish AI could do that it can’t yet?
+    </div>
+  </foreignObject>
+
+</svg>
