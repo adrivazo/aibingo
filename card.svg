@@ -3,11 +3,7 @@
   <rect x="0" y="0" width="750" height="1050" rx="40" fill="#000000"/>
 
   <!-- MIT AI Logo -->
-  <!-- Replace this <text> with the actual MITAI logo SVG or embed your PNG -->
-  <text x="50%" y="140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
-        font-weight="700" font-size="120">
-    <tspan fill="#ffffff">MIT</tspan><tspan fill="#ff00b9">AI</tspan>
-  </text>
+  <image x="225" y="40" width="300" height="120" href="MITAI logo.png"/>
 
   <!-- Divider line -->
   <line x1="80" y1="200" x2="670" y2="200" stroke="#666" stroke-width="2" opacity="0.4"/>
