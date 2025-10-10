@@ -126,6 +126,19 @@
             font-size: 1.2em;
         }
 
+        .cell.beaver-challenge {
+            background: linear-gradient(135deg, #fff, #e6f5ff);
+            border: 2px solid #0066cc;
+        }
+
+        .cell.beaver-challenge::after {
+            content: "🦫";
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 1.2em;
+        }
+
         .cell.checked {
             background: #e8f5e9;
             border-color: #4caf50;
@@ -260,6 +273,11 @@
                 top: 2px;
                 right: 2px;
             }
+            .cell.beaver-challenge::after {
+                font-size: 0.9em;
+                top: 2px;
+                right: 2px;
+            }
             .challenge-text {
                 font-size: 0.85em;
                 line-height: 1.2;
@@ -354,19 +372,19 @@
 
             <!-- Row 1 -->
             <div class="cell" onclick="toggleCell(this)">
-                <div class="challenge-text">Attend 8:15 AM Expert Round Table (photo with table A-E)</div>
+                <div class="challenge-text">Attend 8:15 AM Expert Round Table (photo at table A-E)</div>
             </div>
             <div class="cell" onclick="toggleCell(this)">
                 <div class="challenge-text">Get business cards from 3 vendor booths</div>
             </div>
             <div class="cell" onclick="toggleCell(this)">
-                <div class="challenge-text">Submit Slido question that gets answered</div>
+                <div class="challenge-text">Submit Slido question (screenshot)</div>
             </div>
             <div class="cell" onclick="toggleCell(this)">
                 <div class="challenge-text">Post on LinkedIn with #MITAIConference + @MITAS</div>
             </div>
             <div class="cell fire-challenge" onclick="toggleCell(this)">
-                <div class="challenge-text">Spot TIM-A in afternoon slide</div>
+                <div class="challenge-text">Spot TIM-A in a slide</div>
             </div>
 
             <!-- Row 2 -->
@@ -388,7 +406,7 @@
 
             <!-- Row 3 -->
             <div class="cell" onclick="toggleCell(this)">
-                <div class="challenge-text">Find birthday twin in AI</div>
+                <div class="challenge-text">Find a birthday twin</div>
             </div>
             <div class="cell" onclick="toggleCell(this)">
                 <div class="challenge-text">Watch 3 hackathon demos & rank by ARR</div>
@@ -405,10 +423,10 @@
 
             <!-- Row 4 -->
             <div class="cell" onclick="toggleCell(this)">
-                <div class="challenge-text">Attend in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
+                <div class="challenge-text">Attend a session in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
             </div>
-            <div class="cell fire-challenge" onclick="toggleCell(this)">
-                <div class="challenge-text">Find someone in MIT gear + selfie</div>
+            <div class="cell beaver-challenge" onclick="toggleCell(this)">
+                <div class="challenge-text">Find MIT alum who wore TIM costume + selfie</div>
             </div>
             <div class="cell" onclick="toggleCell(this)">
                 <div class="challenge-text">Appear in AI Awards crowd photo (6 PM)</div>
@@ -425,7 +443,7 @@
                 <div class="challenge-text">Get panelist book/paper recommendation on video</div>
             </div>
             <div class="cell" onclick="toggleCell(this)">
-                <div class="challenge-text">Collect swag from 5+ booths</div>
+                <div class="challenge-text">Collect swag from 3 booths</div>
             </div>
             <div class="cell" onclick="toggleCell(this)">
                 <div class="challenge-text">Attend the cofounder speed matching workshop</div>
@@ -464,12 +482,12 @@
                 <div class="lottery-level">
                     <div class="entries">5</div>
                     <div>Entries</div>
-                    <small>3+ lines total</small>
+                    <small>3+ lines OR find TIM alumni 🦫</small>
                 </div>
                 <div class="lottery-level fire-walker">
                     <div class="entries">10</div>
                     <div>Entries</div>
-                    <small><strong>FIRE WALKER</strong><br>All 5 🔥 challenges</small>
+                    <small><strong>FIRE WALKER</strong><br>All 4 🔥 challenges</small>
                 </div>
                 <div class="lottery-level" style="background: linear-gradient(135deg, #FFD700, #FF6B6B); animation: pulse 1.5s infinite;">
                     <div class="entries">20</div>
@@ -482,18 +500,24 @@
         <div class="instructions">
             <h3>🔥 Special Fire Challenges</h3>
             <ul style="line-height: 1.8;">
-                <li><strong>TIM-A Spotter (Row 1, Column P):</strong> Find TIM-A the Beaverette (TIM's cousin with pink bow) in afternoon slide</li>
+                <li><strong>TIM-A Spotter (Row 1, Column P):</strong> Find TIM-A the Beaverette (TIM's cousin with pink bow) in a slide</li>
                 <li><strong>VC Collector (Row 2, Column T):</strong> Business cards from 3 real VCs (not crypto bros)</li>
                 <li><strong>50+ Engagement Master (Row 3, Column F):</strong> LinkedIn post with 50+ reactions by 6 PM</li>
-                <li><strong>MIT Gear Spotter (Row 4, Column H):</strong> Find someone in MIT gear + selfie proof</li>
                 <li><strong>Q&A Champion (Row 5, Column I):</strong> Capture panelist book/paper recommendation on video</li>
+            </ul>
+        </div>
+        
+        <div class="instructions">
+            <h3>🦫 Special Beaver Challenge</h3>
+            <ul style="line-height: 1.8;">
+                <li><strong>TIM Alumni Hunter (Row 4, Column H):</strong> Find an MIT alum who once wore the TIM the Beaver costume during their time at MIT. Get selfie proof and their story! This legendary challenge earns 5 lottery entries on its own. We salute their sweaty dedication to school spirit!</li>
             </ul>
         </div>
 
         <div class="fine-print">
             <strong>Submission:</strong> bingo@mitaiconference.org by 6:45 PM | Include completed lines (e.g., "Row 3 + Column H" or "Main diagonal" or "X pattern")<br><br>
             *Yes, we know what IHTFP means. No, we won't tell the sponsors.<br><br>
-            Fine print: 3 Oura Ring winners will be announced the following week on the MIT AI Conference LinkedIn Page after we verified the entries. Prize is latest generation Oura Ring (retail value ~$349) or equivalent wellness tech. TIM-A the Beaverette is definitely not avoiding trademark issues with TIM the Beaver™. She's her own beaver. Super smart, and with a bow. Totally different. "VC" means real venture capital funds, not your roommate who bought Dogecoin at the peak. Fire Walker status requires proof of all 5 challenges and enters you in drawing 15 times.
+            Fine print: 3 Oura Ring winners will be announced the following week on the MIT AI Conference LinkedIn Page after we verified the entries. Prize is latest generation Oura Ring (retail value ~$349) or equivalent wellness tech. TIM-A the Beaverette is definitely not avoiding trademark issues with TIM the Beaver™. She's her own beaver. Super smart, and with a bow. Totally different. "VC" means real venture capital funds, not your roommate who bought Dogecoin at the peak. Fire Walker status requires proof of all 4 fire challenges and enters you in drawing 10 times. Finding a TIM costume alumni earns 5 entries alone!
         </div>
     </div>
 
