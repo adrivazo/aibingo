@@ -28,6 +28,7 @@
             border-radius: 20px;
             padding: 25px 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
         }
 
         .header {
@@ -262,8 +263,10 @@
                 padding-bottom: 6px;
             }
             .header img {
-                height: 45px !important;
-                margin-bottom: 3px !important;
+                position: absolute !important;
+                right: 15px !important;
+                top: 10px !important;
+                height: 40px !important;
             }
             h1 {
                 font-size: 1.5em;
@@ -289,20 +292,20 @@
                 padding: 0;
             }
             .instructions {
-                margin: 8px 0;
-                padding: 8px 12px;
+                margin: 6px 0;
+                padding: 6px 10px;
             }
             .instructions h3 {
-                font-size: 0.9em;
-                margin-bottom: 6px;
+                font-size: 0.85em;
+                margin-bottom: 4px;
             }
             .instructions p, .instructions ul {
-                font-size: 0.7em;
+                font-size: 0.65em;
                 line-height: 1.3;
             }
             .instructions ul {
                 margin: 0;
-                padding-left: 20px;
+                padding-left: 18px;
             }
             .lottery-levels {
                 gap: 6px;
@@ -456,10 +459,10 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="MITAI logo.png" alt="MIT AI Conference" style="height: 70px; margin-bottom: 10px;">
             <h1>MIT AI Conference 2025 Bingo Challenge</h1>
             <div class="tagline">Complete ANY line (row, column, or diagonal) to enter the Oura Ring raffle!</div>
             <div style="font-size: 0.9em; color: #888; margin-top: 10px;">3 winners will be drawn! Submit evidence by 6:45 PM to bingo@mitaiconference.org</div>
+            <img src="MITAI logo.png" alt="MIT AI Conference" style="position: absolute; right: 30px; top: 25px; height: 60px;">
         </div>
 
         <div class="bingo-grid">
@@ -598,9 +601,22 @@
         </div>
 
         <div class="instructions">
-            <h3>Special Challenges</h3>
-            <p style="margin-bottom: 8px;"><strong>🔥 Fire Challenges:</strong> TIM-A Spotter • VC Cards (3 real VCs) • 50+ LinkedIn reactions by 6PM • Smoots explanation</p>
-            <p><strong>🦫 Beaver Challenge:</strong> MIT gear selfie (1 entry) OR find TIM costume alumni for 5 entries!</p>
+            <h3>🔥 Special Fire Challenges</h3>
+            <ul style="line-height: 1.5; margin: 8px 0;">
+                <li><strong>TIM-A Spotter:</strong> Find TIM-A the Beaverette (TIM's cousin with pink bow) in a slide</li>
+                <li><strong>VC Collector:</strong> Business cards from 3 real VCs (not crypto bros)</li>
+                <li><strong>50+ Engagement Master:</strong> LinkedIn post with 50+ reactions by 6 PM</li>
+                <li><strong>Smoots Scholar:</strong> Explain what smoots are to someone OR have an MIT alum explain them to you (photo/video proof of the teaching moment!)</li>
+            </ul>
+        </div>
+        
+        <div class="instructions">
+            <h3>🦫 Special Beaver Challenge - Bonus Option!</h3>
+            <ul style="line-height: 1.5; margin: 8px 0;">
+                <li><strong>MIT Gear Spotter:</strong> Find someone in MIT gear for a selfie (1 entry as normal)<br>
+                <strong>OR</strong><br>
+                <strong>TIM Alumni Hunter (LEGENDARY):</strong> Find an MIT alum who once wore the TIM the Beaver costume during their time at MIT. Get photo proof or their story! This legendary version of the same box earns you <strong>5 lottery entries!</strong> Past TIM beavers: We salute your sweaty dedication!</li>
+            </ul>
         </div>
 
         <div class="fine-print">
