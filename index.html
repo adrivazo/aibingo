@@ -33,17 +33,19 @@
         
         .main-content {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             align-items: flex-start;
         }
         
         .bingo-grid-wrapper {
             flex: 0 0 auto;
+            width: 65%;
         }
         
         .sidebar {
             flex: 1;
             min-width: 0;
+            width: 35%;
         }
         
         .sidebar .instructions {
@@ -55,21 +57,35 @@
         }
         
         .sidebar .instructions h3 {
-            font-size: 1.1em;
-            margin-bottom: 10px;
+            font-size: 1em;
+            margin-bottom: 8px;
         }
         
         .sidebar .instructions p {
-            font-size: 0.9em;
+            font-size: 0.85em;
+            line-height: 1.4;
         }
         
         .sidebar .instructions ul {
-            font-size: 0.9em;
+            font-size: 0.85em;
+            line-height: 1.4;
         }
         
         .sidebar .lottery-levels {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+        
+        .sidebar .lottery-level {
+            padding: 10px;
+        }
+        
+        .sidebar .lottery-level .entries {
+            font-size: 1.5em;
+        }
+        
+        .sidebar .lottery-level small {
+            font-size: 0.75em;
         }
         
         .sidebar .fine-print {
@@ -110,15 +126,16 @@
         .bingo-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 8px;
-            max-width: 600px;
+            gap: 6px;
+            width: 100%;
+            max-width: none;
         }
 
         .cell {
             aspect-ratio: 1;
             border: 2px solid #ddd;
-            border-radius: 10px;
-            padding: 10px;
+            border-radius: 8px;
+            padding: 8px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -128,7 +145,7 @@
             transition: all 0.3s;
             background: white;
             position: relative;
-            font-size: 0.95em;
+            font-size: 0.85em;
             overflow: hidden;
         }
 
@@ -208,10 +225,10 @@
         }
 
         .challenge-text {
-            font-size: 0.9em;
-            line-height: 1.3;
+            font-size: 0.8em;
+            line-height: 1.2;
             color: #333;
-            padding: 5px;
+            padding: 3px;
         }
 
         .instructions {
@@ -285,12 +302,13 @@
         }
 
         .fine-print {
-            font-size: 0.95em;
+            font-size: 0.85em;
             color: #666;
-            margin-top: 20px;
-            padding-top: 15px;
+            margin-top: 15px;
+            padding-top: 12px;
             border-top: 1px solid #ddd;
-            line-height: 1.6;
+            line-height: 1.4;
+            text-align: center;
         }
 
         @media print {
@@ -313,10 +331,17 @@
                 margin-bottom: 3px !important;
             }
             .main-content {
-                gap: 20px;
+                gap: 15px;
+            }
+            .bingo-grid-wrapper {
+                width: 60% !important;
             }
             .sidebar {
-                font-size: 0.85em;
+                width: 40% !important;
+                font-size: 0.8em;
+            }
+            .sidebar .lottery-levels {
+                grid-template-columns: repeat(3, 1fr);
             }
             h1 {
                 font-size: 1.5em;
@@ -646,7 +671,7 @@
                     <div>Entries</div>
                     <small><strong>FIRE WALKER 🔥</strong><br>All 4 fire challenges</small>
                 </div>
-                <div class="lottery-level" style="background: #15012b; color: white; animation: pulse 1.5s infinite; border-color: #15012b;">
+                <div class="lottery-level" style="background: #15012b; color: white; animation: pulse 1.5s infinite; border-color: #15012b; grid-column: span 2;">
                     <div class="entries" style="color: #ff14f0;">20</div>
                     <div style="color: white;">Entries</div>
                     <small style="color: white;"><strong>BOARD MASTER ⭐</strong><br>Complete entire board!</small>
@@ -673,14 +698,15 @@
             </ul>
         </div>
 
-                <div class="fine-print">
-                    <strong>Disclaimers:</strong><br>
-                    • Prize: Latest Oura Ring (~$349) or equivalent wellness tech<br>
-                    • TIM-A the Beaverette™ is totally not related to TIM the Beaver™. She's her own beaver. Super smart, and with a bow<br>
-                    • No LLMs were harmed in the making of this bingo<br>
-                    • *Yes, we know what IHTFP means. No, we won't tell the sponsors 😉
-                </div>
             </div>
+        </div>
+        
+        <div class="fine-print">
+            <strong>Disclaimers:</strong>
+            • Prize: Latest Oura Ring (~$349) or equivalent wellness tech
+            • TIM-A the Beaverette™ is totally not related to TIM the Beaver™. She's her own beaver. Super smart, and with a bow
+            • No LLMs were harmed in the making of this bingo
+            • *Yes, we know what IHTFP means. No, we won't tell the sponsors 😉
         </div>
     </div>
 
