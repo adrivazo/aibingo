@@ -30,6 +30,53 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
         }
+        
+        .main-content {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        
+        .bingo-grid-wrapper {
+            flex: 0 0 auto;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .sidebar .instructions {
+            margin: 12px 0;
+        }
+        
+        .sidebar .instructions:first-child {
+            margin-top: 0;
+        }
+        
+        .sidebar .instructions h3 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .sidebar .instructions p {
+            font-size: 0.9em;
+        }
+        
+        .sidebar .instructions ul {
+            font-size: 0.9em;
+        }
+        
+        .sidebar .lottery-levels {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        
+        .sidebar .fine-print {
+            font-size: 0.85em;
+            margin-top: 15px;
+            padding-top: 12px;
+        }
 
         .header {
             text-align: center;
@@ -63,9 +110,8 @@
         .bingo-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin: 20px auto 30px;
-            max-width: 900px;
+            gap: 8px;
+            max-width: 600px;
         }
 
         .cell {
@@ -259,14 +305,18 @@
                 max-width: 100%;
             }
             .header {
-                margin-bottom: 8px;
-                padding-bottom: 6px;
+                margin-bottom: 10px;
+                padding-bottom: 8px;
             }
             .header img {
-                position: absolute !important;
-                right: 15px !important;
-                top: 10px !important;
                 height: 40px !important;
+                margin-bottom: 3px !important;
+            }
+            .main-content {
+                gap: 20px;
+            }
+            .sidebar {
+                font-size: 0.85em;
             }
             h1 {
                 font-size: 1.5em;
@@ -459,13 +509,15 @@
 <body>
     <div class="container">
         <div class="header">
+            <img src="MITAI logo.png" alt="MIT AI Conference" style="height: 50px; margin-bottom: 5px;">
             <h1>MIT AI Conference 2025 Bingo Challenge</h1>
             <div class="tagline">Complete ANY line (row, column, or diagonal) to enter the Oura Ring raffle!</div>
-            <div style="font-size: 0.9em; color: #888; margin-top: 10px;">3 winners will be drawn! Submit evidence by 6:45 PM to bingo@mitaiconference.org</div>
-            <img src="MITAI logo.png" alt="MIT AI Conference" style="position: absolute; right: 30px; top: 25px; height: 60px;">
+            <div style="font-size: 0.9em; color: #888; margin-top: 8px;">3 winners will be drawn! Submit evidence by 6:45 PM to bingo@mitaiconference.org</div>
         </div>
 
-        <div class="bingo-grid">
+        <div class="main-content">
+            <div class="bingo-grid-wrapper">
+                <div class="bingo-grid">
             <!-- Headers -->
             <div class="cell header-cell">I</div>
             <div class="cell header-cell">H</div>
@@ -557,9 +609,11 @@
             <div class="cell" onclick="toggleCell(this)">
                 <div class="challenge-text">Scan 5+ LinkedIn QR codes (new connections)</div>
             </div>
-        </div>
-
-        <div class="instructions">
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="instructions">
             <h3>📧 How to Submit</h3>
             <p style="font-size: 1em; margin: 10px 0;">
                 <strong>Email:</strong> bingo@mitaiconference.org by 6:45 PM<br>
@@ -619,12 +673,14 @@
             </ul>
         </div>
 
-        <div class="fine-print">
-            <strong>Disclaimers:</strong><br>
-            • Prize: Latest Oura Ring (~$349) or equivalent wellness tech<br>
-            • TIM-A the Beaverette™ is totally not related to TIM the Beaver™. She's her own beaver. Super smart, and with a bow<br>
-            • No LLMs were harmed in the making of this bingo<br>
-            • *Yes, we know what IHTFP means. No, we won't tell the sponsors 😉
+                <div class="fine-print">
+                    <strong>Disclaimers:</strong><br>
+                    • Prize: Latest Oura Ring (~$349) or equivalent wellness tech<br>
+                    • TIM-A the Beaverette™ is totally not related to TIM the Beaver™. She's her own beaver. Super smart, and with a bow<br>
+                    • No LLMs were harmed in the making of this bingo<br>
+                    • *Yes, we know what IHTFP means. No, we won't tell the sponsors 😉
+                </div>
+            </div>
         </div>
     </div>
 
