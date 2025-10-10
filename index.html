@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>MIT AI Conference 2025 - IHTFP Bingo Challenge</title>
     <meta name="description" content="Win an Oura Ring at MIT AI Conference 2025! Complete bingo challenges to enter the raffle.">
-    <meta name="theme-color" content="#FF00FF">
+    <meta name="theme-color" content="#ff14f0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,7 +16,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f5f5f5;
             min-height: 100vh;
             padding: 20px;
         }
@@ -26,24 +27,23 @@
             background: white;
             border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .header {
             text-align: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 3px solid #FF00FF;
+            border-bottom: 3px solid #ff14f0;
         }
 
         h1 {
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            color: #15012b;
             font-size: 2.5em;
+            font-weight: 800;
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #FF00FF, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: -0.02em;
         }
 
         .subtitle {
@@ -53,9 +53,10 @@
         }
 
         .tagline {
-            color: #FF00FF;
-            font-weight: bold;
+            color: #ff14f0;
+            font-weight: 600;
             font-size: 1.1em;
+            font-family: 'Inter', sans-serif;
         }
 
         .bingo-grid {
@@ -87,15 +88,16 @@
         .cell:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-color: #FF00FF;
+            border-color: #ff14f0;
         }
 
         .cell.header-cell {
-            background: linear-gradient(135deg, #FF00FF, #764ba2);
+            background: #15012b;
             color: white;
             font-size: 2em;
-            font-weight: bold;
+            font-weight: 800;
             cursor: default;
+            font-family: 'Inter', sans-serif;
         }
 
         .cell.header-cell:hover {
@@ -104,13 +106,14 @@
         }
 
         .cell.free-space {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
+            background: #ff14f0;
             color: white;
-            font-weight: bold;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            font-family: 'Inter', sans-serif;
         }
 
         .cell.fire-challenge {
@@ -127,8 +130,8 @@
         }
 
         .cell.beaver-challenge {
-            background: linear-gradient(135deg, #fff, #e6f5ff);
-            border: 2px solid #0066cc;
+            background: linear-gradient(135deg, #fff, #e8f0ff);
+            border: 2px solid #1966ff;
         }
 
         .cell.beaver-challenge::after {
@@ -167,13 +170,15 @@
         }
 
         .instructions h3 {
-            color: #FF00FF;
+            color: #15012b;
             margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
         }
 
         .puzzle-box {
-            background: linear-gradient(135deg, #667eea20, #764ba220);
-            border: 2px dashed #764ba2;
+            background: #f8f9fa;
+            border: 2px dashed #dfdcda;
             border-radius: 10px;
             padding: 20px;
             margin: 20px 0;
@@ -196,12 +201,13 @@
 
         .lottery-level .entries {
             font-size: 2em;
-            color: #FF00FF;
-            font-weight: bold;
+            color: #ff14f0;
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
         }
 
         .fire-walker {
-            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            background: linear-gradient(135deg, #ff6b6b, #ff14f0);
             border-color: #ff4444;
             animation: pulse 2s infinite;
         }
@@ -489,10 +495,10 @@
                     <div>Entries</div>
                     <small><strong>FIRE WALKER</strong><br>All 4 🔥 challenges</small>
                 </div>
-                <div class="lottery-level" style="background: linear-gradient(135deg, #FFD700, #FF6B6B); animation: pulse 1.5s infinite;">
-                    <div class="entries">20</div>
-                    <div>Entries</div>
-                    <small><strong>BOARD MASTER</strong><br>Complete entire board!</small>
+                <div class="lottery-level" style="background: #15012b; color: white; animation: pulse 1.5s infinite;">
+                    <div class="entries" style="color: white;">20</div>
+                    <div style="color: white;">Entries</div>
+                    <small style="color: white;"><strong>BOARD MASTER</strong><br>Complete entire board!</small>
                 </div>
             </div>
         </div>
@@ -532,8 +538,8 @@
         }
 
         // Add some MIT easter eggs
-        console.log('%c IHTFP BINGO', 'color: #FF00FF; font-size: 30px; font-weight: bold;');
-        console.log('%c You found the console! Course 6 student detected? 🦫', 'color: #764ba2; font-size: 14px;');
+        console.log('%c IHTFP BINGO', 'color: #ff14f0; font-size: 30px; font-weight: bold;');
+        console.log('%c You found the console! Course 6 student detected? 🦫', 'color: #15012b; font-size: 14px;');
     </script>
 </body>
 </html>
