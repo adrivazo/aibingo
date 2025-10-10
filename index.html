@@ -193,10 +193,16 @@
 
         .lottery-level {
             background: white;
-            border: 2px solid #ddd;
+            border: 2px solid #dfdcda;
             border-radius: 10px;
             padding: 15px;
             text-align: center;
+            transition: all 0.3s;
+        }
+
+        .lottery-level:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .lottery-level .entries {
@@ -207,9 +213,17 @@
         }
 
         .fire-walker {
-            background: linear-gradient(135deg, #ff6b6b, #ff14f0);
-            border-color: #ff4444;
+            background: rgba(255, 20, 240, 0.15) !important;
+            border: 2px solid #ff14f0 !important;
             animation: pulse 2s infinite;
+        }
+
+        .fire-walker .entries {
+            color: #15012b !important;
+        }
+
+        .fire-walker strong {
+            color: #ff14f0;
         }
 
         @keyframes pulse {
@@ -363,7 +377,7 @@
     <div class="container">
         <div class="header">
             <img src="MITAI logo.png" alt="MIT AI Conference" style="height: 70px; margin-bottom: 10px;">
-            <h1>IHTFP* Bingo Challenge</h1>
+            <h1>MIT AI Conference 2025 -Bingo</h1>
             <div class="tagline">Complete ANY line (row, column, or diagonal) to enter the Oura Ring raffle!</div>
             <div style="font-size: 0.9em; color: #888; margin-top: 10px;">3 winners will be drawn! Submit evidence by 6:45 PM to bingo@mitaiconference.org</div>
         </div>
@@ -480,25 +494,25 @@
                     <div>Entry</div>
                     <small>Any line (row, column, or diagonal)</small>
                 </div>
-                <div class="lottery-level">
-                    <div class="entries">3</div>
+                <div class="lottery-level" style="background: rgba(25, 102, 255, 0.05); border-color: #1966ff;">
+                    <div class="entries" style="color: #1966ff;">3</div>
                     <div>Entries</div>
                     <small>2 lines (inc. diagonals) OR "X" pattern</small>
                 </div>
-                <div class="lottery-level">
-                    <div class="entries">5</div>
+                <div class="lottery-level" style="background: rgba(25, 102, 255, 0.1); border-color: #1966ff;">
+                    <div class="entries" style="color: #1966ff;">5</div>
                     <div>Entries</div>
                     <small>3+ lines OR TIM alumni 🦫</small>
                 </div>
                 <div class="lottery-level fire-walker">
                     <div class="entries">10</div>
                     <div>Entries</div>
-                    <small><strong>FIRE WALKER</strong><br>All 4 🔥 challenges</small>
+                    <small><strong>FIRE WALKER 🔥</strong><br>All 4 fire challenges</small>
                 </div>
-                <div class="lottery-level" style="background: #15012b; color: white; animation: pulse 1.5s infinite;">
-                    <div class="entries" style="color: white;">20</div>
+                <div class="lottery-level" style="background: #15012b; color: white; animation: pulse 1.5s infinite; border-color: #15012b;">
+                    <div class="entries" style="color: #ff14f0;">20</div>
                     <div style="color: white;">Entries</div>
-                    <small style="color: white;"><strong>BOARD MASTER</strong><br>Complete entire board!</small>
+                    <small style="color: white;"><strong>BOARD MASTER ⭐</strong><br>Complete entire board!</small>
                 </div>
             </div>
         </div>
@@ -524,7 +538,7 @@
 
         <div class="fine-print">
             <strong>Submission:</strong> bingo@mitaiconference.org by 6:45 PM | Include completed lines (e.g., "Row 3 + Column H" or "Main diagonal" or "X pattern")<br><br>
-            *Yes, we know what IHTFP means. No, we won't tell the sponsors.<br><br>
+            *Yes, we know what IHTFP means. No, we won't tell the sponsors ;)<br><br>
             Fine print: 3 Oura Ring winners will be announced the following week on the MIT AI Conference LinkedIn Page after we verified the entries. Prize is latest generation Oura Ring (retail value ~$349) or equivalent wellness tech. TIM-A the Beaverette is definitely not avoiding trademark issues with TIM the Beaver™. She's her own beaver. Super smart, and with a bow. Totally different. "VC" means real venture capital funds, not your roommate who bought Dogecoin at the peak. Fire Walker status requires proof of all 4 fire challenges and enters you in drawing 10 times. The beaver box 🦫 has two options: easy mode (MIT gear = normal credit) or legendary mode (find TIM costume alumni = 5 entries instantly)!
         </div>
     </div>
