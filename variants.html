@@ -47,27 +47,52 @@
         .cell {
             aspect-ratio: 1;
             border: 2px solid #ddd;
-            border-radius: 6px;
-            padding: 6px;
+            border-radius: 8px;
+            padding: 8px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
             background: white;
             position: relative;
-            font-size: 0.65em;
-            line-height: 1.2;
+            font-size: 0.9em;
+            overflow: hidden;
+        }
+        
+        .cell:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #ff14f0;
+        }
+        
+        .challenge-text {
+            font-size: 0.95em;
+            line-height: 1.3;
             color: #333;
+            padding: 4px;
+            font-weight: 500;
         }
 
         .cell.header-cell {
             background: transparent;
             color: #15012b;
-            font-size: 1.8em;
+            font-size: 2.5em;
             font-weight: 900;
+            cursor: default;
             font-family: 'Inter', sans-serif;
             border: none;
-            padding: 2px;
+            padding: 5px;
+            aspect-ratio: auto;
+            min-height: auto;
+        }
+        
+        .cell.header-cell:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: transparent;
         }
 
         .cell.free-space {
@@ -85,9 +110,9 @@
         .cell.fire-challenge::after {
             content: "🔥";
             position: absolute;
-            top: 2px;
-            right: 2px;
-            font-size: 0.9em;
+            top: 5px;
+            right: 5px;
+            font-size: 1.2em;
         }
 
         .cell.beaver-challenge {
@@ -98,9 +123,9 @@
         .cell.beaver-challenge::after {
             content: "🦫";
             position: absolute;
-            top: 2px;
-            right: 2px;
-            font-size: 0.9em;
+            top: 5px;
+            right: 5px;
+            font-size: 1.2em;
         }
 
         .cell.iphone-challenge {
@@ -112,9 +137,9 @@
         .cell.iphone-challenge::after {
             content: "☀️";
             position: absolute;
-            top: 2px;
-            right: 2px;
-            font-size: 0.9em;
+            top: 5px;
+            right: 5px;
+            font-size: 1.2em;
         }
         
         @keyframes glow {
@@ -146,35 +171,35 @@
         <div class="cell header-cell">F</div>
         <div class="cell header-cell">P</div>
 
-        <div class="cell">Get business cards from 3+ booths</div>
-        <div class="cell fire-challenge">Spot TIM-A the Beaverette in any slide</div>
-        <div class="cell">Coffee & Connect photo with 3+ new contacts</div>
-        <div class="cell">Submit a Slido question during any talk</div>
-        <div class="cell">Pick up Hemant's gifted book (free at booth)</div>
+        <div class="cell"><div class="challenge-text">Get business cards from 3+ booths</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Spot TIM-A the Beaverette in any slide</div></div>
+        <div class="cell"><div class="challenge-text">Coffee & Connect photo with 3+ new contacts</div></div>
+        <div class="cell"><div class="challenge-text">Submit a Slido question during any talk</div></div>
+        <div class="cell"><div class="challenge-text">Pick up Hemant's gifted book (free at booth)</div></div>
 
-        <div class="cell">Selfie with robot demo + post on LinkedIn</div>
-        <div class="cell">Watch 3+ hackathon demos and rank by ARR</div>
-        <div class="cell">Get business cards from 2+ real VCs</div>
-        <div class="cell">Attend a workshop</div>
-        <div class="cell iphone-challenge">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div>
+        <div class="cell"><div class="challenge-text">Selfie with robot demo + post on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Watch 3+ hackathon demos and rank by ARR</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 2+ real VCs</div></div>
+        <div class="cell"><div class="challenge-text">Attend a workshop</div></div>
+        <div class="cell iphone-challenge"><div class="challenge-text">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div></div>
 
-        <div class="cell">Find someone with same birth month</div>
-        <div class="cell">Tweet about Research Slam in ≤18 words</div>
-        <div class="cell free-space">FREE SPACE<br>Show badge</div>
-        <div class="cell fire-challenge">LinkedIn post: 50+ engagements by 6 PM</div>
-        <div class="cell">Take professional headshot at photo booth</div>
+        <div class="cell"><div class="challenge-text">Find someone with same birth month</div></div>
+        <div class="cell"><div class="challenge-text">Tweet about Research Slam in ≤18 words</div></div>
+        <div class="cell free-space"><div class="challenge-text">FREE SPACE<br>Show badge</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">LinkedIn post: 50+ engagements by 6 PM</div></div>
+        <div class="cell"><div class="challenge-text">Take professional headshot at photo booth</div></div>
 
-        <div class="cell beaver-challenge">Find someone in MIT gear + selfie</div>
-        <div class="cell fire-challenge">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
-        <div class="cell">Create a Genspark account (show profile)</div>
-        <div class="cell">Share Shishir Mehrotra insight on LinkedIn</div>
-        <div class="cell">Post on LinkedIn + tag @MITAIConference @MITAS</div>
+        <div class="cell beaver-challenge"><div class="challenge-text">Find someone in MIT gear + selfie</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div></div>
+        <div class="cell"><div class="challenge-text">Create a Genspark account (show profile)</div></div>
+        <div class="cell"><div class="challenge-text">Share Shishir Mehrotra insight on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Post on LinkedIn + tag @MITAIConference @MITAS</div></div>
 
-        <div class="cell fire-challenge">Explain smoots OR have them explained to you (photo proof)</div>
-        <div class="cell">Collect swag from 5+ vendor booths</div>
-        <div class="cell">Attend cofounder speed matching (12:30-2 PM)</div>
-        <div class="cell">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div>
-        <div class="cell">Scan 5+ LinkedIn QR codes (new connections)</div>
+        <div class="cell fire-challenge"><div class="challenge-text">Explain smoots OR have them explained to you (photo proof)</div></div>
+        <div class="cell"><div class="challenge-text">Collect swag from 5+ vendor booths</div></div>
+        <div class="cell"><div class="challenge-text">Attend cofounder speed matching (12:30-2 PM)</div></div>
+        <div class="cell"><div class="challenge-text">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div></div>
+        <div class="cell"><div class="challenge-text">Scan 5+ LinkedIn QR codes (new connections)</div></div>
     </div>
 </div>
 
@@ -188,35 +213,35 @@
         <div class="cell header-cell">F</div>
         <div class="cell header-cell">P</div>
 
-        <div class="cell fire-challenge">LinkedIn post: 50+ engagements by 6 PM</div>
-        <div class="cell">Attend cofounder speed matching (12:30-2 PM)</div>
-        <div class="cell">Selfie with robot demo + post on LinkedIn</div>
-        <div class="cell">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div>
-        <div class="cell">Share Shishir Mehrotra insight on LinkedIn</div>
+        <div class="cell fire-challenge"><div class="challenge-text">LinkedIn post: 50+ engagements by 6 PM</div></div>
+        <div class="cell"><div class="challenge-text">Attend cofounder speed matching (12:30-2 PM)</div></div>
+        <div class="cell"><div class="challenge-text">Selfie with robot demo + post on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div></div>
+        <div class="cell"><div class="challenge-text">Share Shishir Mehrotra insight on LinkedIn</div></div>
 
-        <div class="cell">Take professional headshot at photo booth</div>
-        <div class="cell">Get business cards from 2+ real VCs</div>
-        <div class="cell">Tweet about Research Slam in ≤18 words</div>
-        <div class="cell fire-challenge">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
-        <div class="cell">Scan 5+ LinkedIn QR codes (new connections)</div>
+        <div class="cell"><div class="challenge-text">Take professional headshot at photo booth</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 2+ real VCs</div></div>
+        <div class="cell"><div class="challenge-text">Tweet about Research Slam in ≤18 words</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div></div>
+        <div class="cell"><div class="challenge-text">Scan 5+ LinkedIn QR codes (new connections)</div></div>
 
-        <div class="cell">Pick up Hemant's gifted book (free at booth)</div>
-        <div class="cell">Submit a Slido question during any talk</div>
-        <div class="cell free-space">FREE SPACE<br>Show badge</div>
-        <div class="cell fire-challenge">Spot TIM-A the Beaverette in any slide</div>
-        <div class="cell beaver-challenge">Find someone in MIT gear + selfie</div>
+        <div class="cell"><div class="challenge-text">Pick up Hemant's gifted book (free at booth)</div></div>
+        <div class="cell"><div class="challenge-text">Submit a Slido question during any talk</div></div>
+        <div class="cell free-space"><div class="challenge-text">FREE SPACE<br>Show badge</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Spot TIM-A the Beaverette in any slide</div></div>
+        <div class="cell beaver-challenge"><div class="challenge-text">Find someone in MIT gear + selfie</div></div>
 
-        <div class="cell">Watch 3+ hackathon demos and rank by ARR</div>
-        <div class="cell fire-challenge">Explain smoots OR have them explained to you (photo proof)</div>
-        <div class="cell">Coffee & Connect photo with 3+ new contacts</div>
-        <div class="cell">Find someone with same birth month</div>
-        <div class="cell iphone-challenge">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div>
+        <div class="cell"><div class="challenge-text">Watch 3+ hackathon demos and rank by ARR</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Explain smoots OR have them explained to you (photo proof)</div></div>
+        <div class="cell"><div class="challenge-text">Coffee & Connect photo with 3+ new contacts</div></div>
+        <div class="cell"><div class="challenge-text">Find someone with same birth month</div></div>
+        <div class="cell iphone-challenge"><div class="challenge-text">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div></div>
 
-        <div class="cell">Attend a workshop</div>
-        <div class="cell">Create a Genspark account (show profile)</div>
-        <div class="cell">Post on LinkedIn + tag @MITAIConference @MITAS</div>
-        <div class="cell">Get business cards from 3+ booths</div>
-        <div class="cell">Collect swag from 5+ vendor booths</div>
+        <div class="cell"><div class="challenge-text">Attend a workshop</div></div>
+        <div class="cell"><div class="challenge-text">Create a Genspark account (show profile)</div></div>
+        <div class="cell"><div class="challenge-text">Post on LinkedIn + tag @MITAIConference @MITAS</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 3+ booths</div></div>
+        <div class="cell"><div class="challenge-text">Collect swag from 5+ vendor booths</div></div>
     </div>
 </div>
 
@@ -230,35 +255,35 @@
         <div class="cell header-cell">F</div>
         <div class="cell header-cell">P</div>
 
-        <div class="cell">Scan 5+ LinkedIn QR codes (new connections)</div>
-        <div class="cell">Coffee & Connect photo with 3+ new contacts</div>
-        <div class="cell fire-challenge">Explain smoots OR have them explained to you (photo proof)</div>
-        <div class="cell">Tweet about Research Slam in ≤18 words</div>
-        <div class="cell">Get business cards from 3+ booths</div>
+        <div class="cell"><div class="challenge-text">Scan 5+ LinkedIn QR codes (new connections)</div></div>
+        <div class="cell"><div class="challenge-text">Coffee & Connect photo with 3+ new contacts</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Explain smoots OR have them explained to you (photo proof)</div></div>
+        <div class="cell"><div class="challenge-text">Tweet about Research Slam in ≤18 words</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 3+ booths</div></div>
 
-        <div class="cell fire-challenge">Spot TIM-A the Beaverette in any slide</div>
-        <div class="cell">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div>
-        <div class="cell">Take professional headshot at photo booth</div>
-        <div class="cell">Create a Genspark account (show profile)</div>
-        <div class="cell">Post on LinkedIn + tag @MITAIConference @MITAS</div>
+        <div class="cell fire-challenge"><div class="challenge-text">Spot TIM-A the Beaverette in any slide</div></div>
+        <div class="cell"><div class="challenge-text">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div></div>
+        <div class="cell"><div class="challenge-text">Take professional headshot at photo booth</div></div>
+        <div class="cell"><div class="challenge-text">Create a Genspark account (show profile)</div></div>
+        <div class="cell"><div class="challenge-text">Post on LinkedIn + tag @MITAIConference @MITAS</div></div>
 
-        <div class="cell">Share Shishir Mehrotra insight on LinkedIn</div>
-        <div class="cell iphone-challenge">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div>
-        <div class="cell free-space">FREE SPACE<br>Show badge</div>
-        <div class="cell">Attend a workshop</div>
-        <div class="cell fire-challenge">LinkedIn post: 50+ engagements by 6 PM</div>
+        <div class="cell"><div class="challenge-text">Share Shishir Mehrotra insight on LinkedIn</div></div>
+        <div class="cell iphone-challenge"><div class="challenge-text">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div></div>
+        <div class="cell free-space"><div class="challenge-text">FREE SPACE<br>Show badge</div></div>
+        <div class="cell"><div class="challenge-text">Attend a workshop</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">LinkedIn post: 50+ engagements by 6 PM</div></div>
 
-        <div class="cell beaver-challenge">Find someone in MIT gear + selfie</div>
-        <div class="cell">Find someone with same birth month</div>
-        <div class="cell">Get business cards from 2+ real VCs</div>
-        <div class="cell fire-challenge">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
-        <div class="cell">Watch 3+ hackathon demos and rank by ARR</div>
+        <div class="cell beaver-challenge"><div class="challenge-text">Find someone in MIT gear + selfie</div></div>
+        <div class="cell"><div class="challenge-text">Find someone with same birth month</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 2+ real VCs</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div></div>
+        <div class="cell"><div class="challenge-text">Watch 3+ hackathon demos and rank by ARR</div></div>
 
-        <div class="cell">Collect swag from 5+ vendor booths</div>
-        <div class="cell">Pick up Hemant's gifted book (free at booth)</div>
-        <div class="cell">Attend cofounder speed matching (12:30-2 PM)</div>
-        <div class="cell">Selfie with robot demo + post on LinkedIn</div>
-        <div class="cell">Submit a Slido question during any talk</div>
+        <div class="cell"><div class="challenge-text">Collect swag from 5+ vendor booths</div></div>
+        <div class="cell"><div class="challenge-text">Pick up Hemant's gifted book (free at booth)</div></div>
+        <div class="cell"><div class="challenge-text">Attend cofounder speed matching (12:30-2 PM)</div></div>
+        <div class="cell"><div class="challenge-text">Selfie with robot demo + post on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Submit a Slido question during any talk</div></div>
     </div>
 </div>
 
@@ -272,35 +297,35 @@
         <div class="cell header-cell">F</div>
         <div class="cell header-cell">P</div>
 
-        <div class="cell fire-challenge">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
-        <div class="cell">Take professional headshot at photo booth</div>
-        <div class="cell">Get business cards from 3+ booths</div>
-        <div class="cell">Get business cards from 2+ real VCs</div>
-        <div class="cell">Collect swag from 5+ vendor booths</div>
+        <div class="cell fire-challenge"><div class="challenge-text">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div></div>
+        <div class="cell"><div class="challenge-text">Take professional headshot at photo booth</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 3+ booths</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 2+ real VCs</div></div>
+        <div class="cell"><div class="challenge-text">Collect swag from 5+ vendor booths</div></div>
 
-        <div class="cell">Create a Genspark account (show profile)</div>
-        <div class="cell">Selfie with robot demo + post on LinkedIn</div>
-        <div class="cell">Watch 3+ hackathon demos and rank by ARR</div>
-        <div class="cell fire-challenge">LinkedIn post: 50+ engagements by 6 PM</div>
-        <div class="cell">Submit a Slido question during any talk</div>
+        <div class="cell"><div class="challenge-text">Create a Genspark account (show profile)</div></div>
+        <div class="cell"><div class="challenge-text">Selfie with robot demo + post on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Watch 3+ hackathon demos and rank by ARR</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">LinkedIn post: 50+ engagements by 6 PM</div></div>
+        <div class="cell"><div class="challenge-text">Submit a Slido question during any talk</div></div>
 
-        <div class="cell fire-challenge">Explain smoots OR have them explained to you (photo proof)</div>
-        <div class="cell">Share Shishir Mehrotra insight on LinkedIn</div>
-        <div class="cell free-space">FREE SPACE<br>Show badge</div>
-        <div class="cell">Attend cofounder speed matching (12:30-2 PM)</div>
-        <div class="cell">Coffee & Connect photo with 3+ new contacts</div>
+        <div class="cell fire-challenge"><div class="challenge-text">Explain smoots OR have them explained to you (photo proof)</div></div>
+        <div class="cell"><div class="challenge-text">Share Shishir Mehrotra insight on LinkedIn</div></div>
+        <div class="cell free-space"><div class="challenge-text">FREE SPACE<br>Show badge</div></div>
+        <div class="cell"><div class="challenge-text">Attend cofounder speed matching (12:30-2 PM)</div></div>
+        <div class="cell"><div class="challenge-text">Coffee & Connect photo with 3+ new contacts</div></div>
 
-        <div class="cell">Post on LinkedIn + tag @MITAIConference @MITAS</div>
-        <div class="cell beaver-challenge">Find someone in MIT gear + selfie</div>
-        <div class="cell">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div>
-        <div class="cell fire-challenge">Spot TIM-A the Beaverette in any slide</div>
-        <div class="cell">Find someone with same birth month</div>
+        <div class="cell"><div class="challenge-text">Post on LinkedIn + tag @MITAIConference @MITAS</div></div>
+        <div class="cell beaver-challenge"><div class="challenge-text">Find someone in MIT gear + selfie</div></div>
+        <div class="cell"><div class="challenge-text">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Spot TIM-A the Beaverette in any slide</div></div>
+        <div class="cell"><div class="challenge-text">Find someone with same birth month</div></div>
 
-        <div class="cell">Pick up Hemant's gifted book (free at booth)</div>
-        <div class="cell">Attend a workshop</div>
-        <div class="cell iphone-challenge">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div>
-        <div class="cell">Tweet about Research Slam in ≤18 words</div>
-        <div class="cell">Scan 5+ LinkedIn QR codes (new connections)</div>
+        <div class="cell"><div class="challenge-text">Pick up Hemant's gifted book (free at booth)</div></div>
+        <div class="cell"><div class="challenge-text">Attend a workshop</div></div>
+        <div class="cell iphone-challenge"><div class="challenge-text">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div></div>
+        <div class="cell"><div class="challenge-text">Tweet about Research Slam in ≤18 words</div></div>
+        <div class="cell"><div class="challenge-text">Scan 5+ LinkedIn QR codes (new connections)</div></div>
     </div>
 </div>
 
@@ -314,35 +339,35 @@
         <div class="cell header-cell">F</div>
         <div class="cell header-cell">P</div>
 
-        <div class="cell">Watch 3+ hackathon demos and rank by ARR</div>
-        <div class="cell fire-challenge">LinkedIn post: 50+ engagements by 6 PM</div>
-        <div class="cell">Find someone with same birth month</div>
-        <div class="cell">Scan 5+ LinkedIn QR codes (new connections)</div>
-        <div class="cell fire-challenge">Spot TIM-A the Beaverette in any slide</div>
+        <div class="cell"><div class="challenge-text">Watch 3+ hackathon demos and rank by ARR</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">LinkedIn post: 50+ engagements by 6 PM</div></div>
+        <div class="cell"><div class="challenge-text">Find someone with same birth month</div></div>
+        <div class="cell"><div class="challenge-text">Scan 5+ LinkedIn QR codes (new connections)</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Spot TIM-A the Beaverette in any slide</div></div>
 
-        <div class="cell">Attend a workshop</div>
-        <div class="cell">Attend cofounder speed matching (12:30-2 PM)</div>
-        <div class="cell">Pick up Hemant's gifted book (free at booth)</div>
-        <div class="cell">Take professional headshot at photo booth</div>
-        <div class="cell iphone-challenge">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div>
+        <div class="cell"><div class="challenge-text">Attend a workshop</div></div>
+        <div class="cell"><div class="challenge-text">Attend cofounder speed matching (12:30-2 PM)</div></div>
+        <div class="cell"><div class="challenge-text">Pick up Hemant's gifted book (free at booth)</div></div>
+        <div class="cell"><div class="challenge-text">Take professional headshot at photo booth</div></div>
+        <div class="cell iphone-challenge"><div class="challenge-text">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div></div>
 
-        <div class="cell">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div>
-        <div class="cell">Get business cards from 2+ real VCs</div>
-        <div class="cell free-space">FREE SPACE<br>Show badge</div>
-        <div class="cell">Tweet about Research Slam in ≤18 words</div>
-        <div class="cell">Share Shishir Mehrotra insight on LinkedIn</div>
+        <div class="cell"><div class="challenge-text">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 2+ real VCs</div></div>
+        <div class="cell free-space"><div class="challenge-text">FREE SPACE<br>Show badge</div></div>
+        <div class="cell"><div class="challenge-text">Tweet about Research Slam in ≤18 words</div></div>
+        <div class="cell"><div class="challenge-text">Share Shishir Mehrotra insight on LinkedIn</div></div>
 
-        <div class="cell">Coffee & Connect photo with 3+ new contacts</div>
-        <div class="cell">Collect swag from 5+ vendor booths</div>
-        <div class="cell fire-challenge">Explain smoots OR have them explained to you (photo proof)</div>
-        <div class="cell">Post on LinkedIn + tag @MITAIConference @MITAS</div>
-        <div class="cell">Get business cards from 3+ booths</div>
+        <div class="cell"><div class="challenge-text">Coffee & Connect photo with 3+ new contacts</div></div>
+        <div class="cell"><div class="challenge-text">Collect swag from 5+ vendor booths</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Explain smoots OR have them explained to you (photo proof)</div></div>
+        <div class="cell"><div class="challenge-text">Post on LinkedIn + tag @MITAIConference @MITAS</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 3+ booths</div></div>
 
-        <div class="cell beaver-challenge">Find someone in MIT gear + selfie</div>
-        <div class="cell">Selfie with robot demo + post on LinkedIn</div>
-        <div class="cell">Create a Genspark account (show profile)</div>
-        <div class="cell">Submit a Slido question during any talk</div>
-        <div class="cell fire-challenge">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
+        <div class="cell beaver-challenge"><div class="challenge-text">Find someone in MIT gear + selfie</div></div>
+        <div class="cell"><div class="challenge-text">Selfie with robot demo + post on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Create a Genspark account (show profile)</div></div>
+        <div class="cell"><div class="challenge-text">Submit a Slido question during any talk</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div></div>
     </div>
 </div>
 
@@ -356,35 +381,35 @@
         <div class="cell header-cell">F</div>
         <div class="cell header-cell">P</div>
 
-        <div class="cell">Get business cards from 2+ real VCs</div>
-        <div class="cell">Attend a workshop</div>
-        <div class="cell iphone-challenge">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div>
-        <div class="cell">Collect swag from 5+ vendor booths</div>
-        <div class="cell">Create a Genspark account (show profile)</div>
+        <div class="cell"><div class="challenge-text">Get business cards from 2+ real VCs</div></div>
+        <div class="cell"><div class="challenge-text">Attend a workshop</div></div>
+        <div class="cell iphone-challenge"><div class="challenge-text">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div></div>
+        <div class="cell"><div class="challenge-text">Collect swag from 5+ vendor booths</div></div>
+        <div class="cell"><div class="challenge-text">Create a Genspark account (show profile)</div></div>
 
-        <div class="cell">Tweet about Research Slam in ≤18 words</div>
-        <div class="cell">Pick up Hemant's gifted book (free at booth)</div>
-        <div class="cell">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div>
-        <div class="cell fire-challenge">Explain smoots OR have them explained to you (photo proof)</div>
-        <div class="cell">Find someone with same birth month</div>
+        <div class="cell"><div class="challenge-text">Tweet about Research Slam in ≤18 words</div></div>
+        <div class="cell"><div class="challenge-text">Pick up Hemant's gifted book (free at booth)</div></div>
+        <div class="cell"><div class="challenge-text">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Explain smoots OR have them explained to you (photo proof)</div></div>
+        <div class="cell"><div class="challenge-text">Find someone with same birth month</div></div>
 
-        <div class="cell">Submit a Slido question during any talk</div>
-        <div class="cell fire-challenge">Spot TIM-A the Beaverette in any slide</div>
-        <div class="cell free-space">FREE SPACE<br>Show badge</div>
-        <div class="cell">Selfie with robot demo + post on LinkedIn</div>
-        <div class="cell fire-challenge">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
+        <div class="cell"><div class="challenge-text">Submit a Slido question during any talk</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Spot TIM-A the Beaverette in any slide</div></div>
+        <div class="cell free-space"><div class="challenge-text">FREE SPACE<br>Show badge</div></div>
+        <div class="cell"><div class="challenge-text">Selfie with robot demo + post on LinkedIn</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div></div>
 
-        <div class="cell beaver-challenge">Find someone in MIT gear + selfie</div>
-        <div class="cell">Share Shishir Mehrotra insight on LinkedIn</div>
-        <div class="cell">Coffee & Connect photo with 3+ new contacts</div>
-        <div class="cell fire-challenge">LinkedIn post: 50+ engagements by 6 PM</div>
-        <div class="cell">Post on LinkedIn + tag @MITAIConference @MITAS</div>
+        <div class="cell beaver-challenge"><div class="challenge-text">Find someone in MIT gear + selfie</div></div>
+        <div class="cell"><div class="challenge-text">Share Shishir Mehrotra insight on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Coffee & Connect photo with 3+ new contacts</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">LinkedIn post: 50+ engagements by 6 PM</div></div>
+        <div class="cell"><div class="challenge-text">Post on LinkedIn + tag @MITAIConference @MITAS</div></div>
 
-        <div class="cell">Take professional headshot at photo booth</div>
-        <div class="cell">Watch 3+ hackathon demos and rank by ARR</div>
-        <div class="cell">Scan 5+ LinkedIn QR codes (new connections)</div>
-        <div class="cell">Attend cofounder speed matching (12:30-2 PM)</div>
-        <div class="cell">Get business cards from 3+ booths</div>
+        <div class="cell"><div class="challenge-text">Take professional headshot at photo booth</div></div>
+        <div class="cell"><div class="challenge-text">Watch 3+ hackathon demos and rank by ARR</div></div>
+        <div class="cell"><div class="challenge-text">Scan 5+ LinkedIn QR codes (new connections)</div></div>
+        <div class="cell"><div class="challenge-text">Attend cofounder speed matching (12:30-2 PM)</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 3+ booths</div></div>
     </div>
 </div>
 
@@ -398,35 +423,35 @@
         <div class="cell header-cell">F</div>
         <div class="cell header-cell">P</div>
 
-        <div class="cell">Post on LinkedIn + tag @MITAIConference @MITAS</div>
-        <div class="cell">Watch 3+ hackathon demos and rank by ARR</div>
-        <div class="cell">Take professional headshot at photo booth</div>
-        <div class="cell beaver-challenge">Find someone in MIT gear + selfie</div>
-        <div class="cell">Attend cofounder speed matching (12:30-2 PM)</div>
+        <div class="cell"><div class="challenge-text">Post on LinkedIn + tag @MITAIConference @MITAS</div></div>
+        <div class="cell"><div class="challenge-text">Watch 3+ hackathon demos and rank by ARR</div></div>
+        <div class="cell"><div class="challenge-text">Take professional headshot at photo booth</div></div>
+        <div class="cell beaver-challenge"><div class="challenge-text">Find someone in MIT gear + selfie</div></div>
+        <div class="cell"><div class="challenge-text">Attend cofounder speed matching (12:30-2 PM)</div></div>
 
-        <div class="cell fire-challenge">Explain smoots OR have them explained to you (photo proof)</div>
-        <div class="cell">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div>
-        <div class="cell">Get business cards from 3+ booths</div>
-        <div class="cell">Collect swag from 5+ vendor booths</div>
-        <div class="cell">Selfie with robot demo + post on LinkedIn</div>
+        <div class="cell fire-challenge"><div class="challenge-text">Explain smoots OR have them explained to you (photo proof)</div></div>
+        <div class="cell"><div class="challenge-text">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 3+ booths</div></div>
+        <div class="cell"><div class="challenge-text">Collect swag from 5+ vendor booths</div></div>
+        <div class="cell"><div class="challenge-text">Selfie with robot demo + post on LinkedIn</div></div>
 
-        <div class="cell">Create a Genspark account (show profile)</div>
-        <div class="cell">Coffee & Connect photo with 3+ new contacts</div>
-        <div class="cell free-space">FREE SPACE<br>Show badge</div>
-        <div class="cell">Scan 5+ LinkedIn QR codes (new connections)</div>
-        <div class="cell">Get business cards from 2+ real VCs</div>
+        <div class="cell"><div class="challenge-text">Create a Genspark account (show profile)</div></div>
+        <div class="cell"><div class="challenge-text">Coffee & Connect photo with 3+ new contacts</div></div>
+        <div class="cell free-space"><div class="challenge-text">FREE SPACE<br>Show badge</div></div>
+        <div class="cell"><div class="challenge-text">Scan 5+ LinkedIn QR codes (new connections)</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 2+ real VCs</div></div>
 
-        <div class="cell">Submit a Slido question during any talk</div>
-        <div class="cell iphone-challenge">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div>
-        <div class="cell">Share Shishir Mehrotra insight on LinkedIn</div>
-        <div class="cell">Pick up Hemant's gifted book (free at booth)</div>
-        <div class="cell fire-challenge">Spot TIM-A the Beaverette in any slide</div>
+        <div class="cell"><div class="challenge-text">Submit a Slido question during any talk</div></div>
+        <div class="cell iphone-challenge"><div class="challenge-text">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div></div>
+        <div class="cell"><div class="challenge-text">Share Shishir Mehrotra insight on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Pick up Hemant's gifted book (free at booth)</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Spot TIM-A the Beaverette in any slide</div></div>
 
-        <div class="cell fire-challenge">LinkedIn post: 50+ engagements by 6 PM</div>
-        <div class="cell">Attend a workshop</div>
-        <div class="cell">Tweet about Research Slam in ≤18 words</div>
-        <div class="cell">Find someone with same birth month</div>
-        <div class="cell fire-challenge">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
+        <div class="cell fire-challenge"><div class="challenge-text">LinkedIn post: 50+ engagements by 6 PM</div></div>
+        <div class="cell"><div class="challenge-text">Attend a workshop</div></div>
+        <div class="cell"><div class="challenge-text">Tweet about Research Slam in ≤18 words</div></div>
+        <div class="cell"><div class="challenge-text">Find someone with same birth month</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div></div>
     </div>
 </div>
 
@@ -440,35 +465,35 @@
         <div class="cell header-cell">F</div>
         <div class="cell header-cell">P</div>
 
-        <div class="cell">Share Shishir Mehrotra insight on LinkedIn</div>
-        <div class="cell">Find someone with same birth month</div>
-        <div class="cell fire-challenge">Spot TIM-A the Beaverette in any slide</div>
-        <div class="cell">Pick up Hemant's gifted book (free at booth)</div>
-        <div class="cell">Tweet about Research Slam in ≤18 words</div>
+        <div class="cell"><div class="challenge-text">Share Shishir Mehrotra insight on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Find someone with same birth month</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Spot TIM-A the Beaverette in any slide</div></div>
+        <div class="cell"><div class="challenge-text">Pick up Hemant's gifted book (free at booth)</div></div>
+        <div class="cell"><div class="challenge-text">Tweet about Research Slam in ≤18 words</div></div>
 
-        <div class="cell fire-challenge">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
-        <div class="cell fire-challenge">LinkedIn post: 50+ engagements by 6 PM</div>
-        <div class="cell">Submit a Slido question during any talk</div>
-        <div class="cell">Attend cofounder speed matching (12:30-2 PM)</div>
-        <div class="cell">Attend a workshop</div>
+        <div class="cell fire-challenge"><div class="challenge-text">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">LinkedIn post: 50+ engagements by 6 PM</div></div>
+        <div class="cell"><div class="challenge-text">Submit a Slido question during any talk</div></div>
+        <div class="cell"><div class="challenge-text">Attend cofounder speed matching (12:30-2 PM)</div></div>
+        <div class="cell"><div class="challenge-text">Attend a workshop</div></div>
 
-        <div class="cell">Collect swag from 5+ vendor booths</div>
-        <div class="cell">Get business cards from 3+ booths</div>
-        <div class="cell free-space">FREE SPACE<br>Show badge</div>
-        <div class="cell">Get business cards from 2+ real VCs</div>
-        <div class="cell">Take professional headshot at photo booth</div>
+        <div class="cell"><div class="challenge-text">Collect swag from 5+ vendor booths</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 3+ booths</div></div>
+        <div class="cell free-space"><div class="challenge-text">FREE SPACE<br>Show badge</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 2+ real VCs</div></div>
+        <div class="cell"><div class="challenge-text">Take professional headshot at photo booth</div></div>
 
-        <div class="cell">Scan 5+ LinkedIn QR codes (new connections)</div>
-        <div class="cell beaver-challenge">Find someone in MIT gear + selfie</div>
-        <div class="cell">Watch 3+ hackathon demos and rank by ARR</div>
-        <div class="cell">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div>
-        <div class="cell fire-challenge">Explain smoots OR have them explained to you (photo proof)</div>
+        <div class="cell"><div class="challenge-text">Scan 5+ LinkedIn QR codes (new connections)</div></div>
+        <div class="cell beaver-challenge"><div class="challenge-text">Find someone in MIT gear + selfie</div></div>
+        <div class="cell"><div class="challenge-text">Watch 3+ hackathon demos and rank by ARR</div></div>
+        <div class="cell"><div class="challenge-text">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Explain smoots OR have them explained to you (photo proof)</div></div>
 
-        <div class="cell">Selfie with robot demo + post on LinkedIn</div>
-        <div class="cell">Coffee & Connect photo with 3+ new contacts</div>
-        <div class="cell">Post on LinkedIn + tag @MITAIConference @MITAS</div>
-        <div class="cell">Create a Genspark account (show profile)</div>
-        <div class="cell iphone-challenge">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div>
+        <div class="cell"><div class="challenge-text">Selfie with robot demo + post on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Coffee & Connect photo with 3+ new contacts</div></div>
+        <div class="cell"><div class="challenge-text">Post on LinkedIn + tag @MITAIConference @MITAS</div></div>
+        <div class="cell"><div class="challenge-text">Create a Genspark account (show profile)</div></div>
+        <div class="cell iphone-challenge"><div class="challenge-text">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div></div>
     </div>
 </div>
 
@@ -482,35 +507,35 @@
         <div class="cell header-cell">F</div>
         <div class="cell header-cell">P</div>
 
-        <div class="cell">Selfie with robot demo + post on LinkedIn</div>
-        <div class="cell">Scan 5+ LinkedIn QR codes (new connections)</div>
-        <div class="cell">Share Shishir Mehrotra insight on LinkedIn</div>
-        <div class="cell fire-challenge">Explain smoots OR have them explained to you (photo proof)</div>
-        <div class="cell">Watch 3+ hackathon demos and rank by ARR</div>
+        <div class="cell"><div class="challenge-text">Selfie with robot demo + post on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Scan 5+ LinkedIn QR codes (new connections)</div></div>
+        <div class="cell"><div class="challenge-text">Share Shishir Mehrotra insight on LinkedIn</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Explain smoots OR have them explained to you (photo proof)</div></div>
+        <div class="cell"><div class="challenge-text">Watch 3+ hackathon demos and rank by ARR</div></div>
 
-        <div class="cell">Coffee & Connect photo with 3+ new contacts</div>
-        <div class="cell">Create a Genspark account (show profile)</div>
-        <div class="cell">Tweet about Research Slam in ≤18 words</div>
-        <div class="cell">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div>
-        <div class="cell fire-challenge">Spot TIM-A the Beaverette in any slide</div>
+        <div class="cell"><div class="challenge-text">Coffee & Connect photo with 3+ new contacts</div></div>
+        <div class="cell"><div class="challenge-text">Create a Genspark account (show profile)</div></div>
+        <div class="cell"><div class="challenge-text">Tweet about Research Slam in ≤18 words</div></div>
+        <div class="cell"><div class="challenge-text">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Spot TIM-A the Beaverette in any slide</div></div>
 
-        <div class="cell fire-challenge">LinkedIn post: 50+ engagements by 6 PM</div>
-        <div class="cell">Take professional headshot at photo booth</div>
-        <div class="cell free-space">FREE SPACE<br>Show badge</div>
-        <div class="cell">Post on LinkedIn + tag @MITAIConference @MITAS</div>
-        <div class="cell">Collect swag from 5+ vendor booths</div>
+        <div class="cell fire-challenge"><div class="challenge-text">LinkedIn post: 50+ engagements by 6 PM</div></div>
+        <div class="cell"><div class="challenge-text">Take professional headshot at photo booth</div></div>
+        <div class="cell free-space"><div class="challenge-text">FREE SPACE<br>Show badge</div></div>
+        <div class="cell"><div class="challenge-text">Post on LinkedIn + tag @MITAIConference @MITAS</div></div>
+        <div class="cell"><div class="challenge-text">Collect swag from 5+ vendor booths</div></div>
 
-        <div class="cell">Attend a workshop</div>
-        <div class="cell">Get business cards from 2+ real VCs</div>
-        <div class="cell">Submit a Slido question during any talk</div>
-        <div class="cell beaver-challenge">Find someone in MIT gear + selfie</div>
-        <div class="cell fire-challenge">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
+        <div class="cell"><div class="challenge-text">Attend a workshop</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 2+ real VCs</div></div>
+        <div class="cell"><div class="challenge-text">Submit a Slido question during any talk</div></div>
+        <div class="cell beaver-challenge"><div class="challenge-text">Find someone in MIT gear + selfie</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div></div>
 
-        <div class="cell iphone-challenge">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div>
-        <div class="cell">Pick up Hemant's gifted book (free at booth)</div>
-        <div class="cell">Get business cards from 3+ booths</div>
-        <div class="cell">Find someone with same birth month</div>
-        <div class="cell">Attend cofounder speed matching (12:30-2 PM)</div>
+        <div class="cell iphone-challenge"><div class="challenge-text">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div></div>
+        <div class="cell"><div class="challenge-text">Pick up Hemant's gifted book (free at booth)</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 3+ booths</div></div>
+        <div class="cell"><div class="challenge-text">Find someone with same birth month</div></div>
+        <div class="cell"><div class="challenge-text">Attend cofounder speed matching (12:30-2 PM)</div></div>
     </div>
 </div>
 
@@ -524,35 +549,35 @@
         <div class="cell header-cell">F</div>
         <div class="cell header-cell">P</div>
 
-        <div class="cell">Pick up Hemant's gifted book (free at booth)</div>
-        <div class="cell">Submit a Slido question during any talk</div>
-        <div class="cell fire-challenge">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div>
-        <div class="cell">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div>
-        <div class="cell fire-challenge">LinkedIn post: 50+ engagements by 6 PM</div>
+        <div class="cell"><div class="challenge-text">Pick up Hemant's gifted book (free at booth)</div></div>
+        <div class="cell"><div class="challenge-text">Submit a Slido question during any talk</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Attend sessions in ALL 3 rooms (HAHN, GRAND, LOVELACE)</div></div>
+        <div class="cell"><div class="challenge-text">Stay ENTIRE day (9 AM + 6:35 PM photos with ice cream 🍦)</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">LinkedIn post: 50+ engagements by 6 PM</div></div>
 
-        <div class="cell">Find someone with same birth month</div>
-        <div class="cell">Tweet about Research Slam in ≤18 words</div>
-        <div class="cell">Post on LinkedIn + tag @MITAIConference @MITAS</div>
-        <div class="cell beaver-challenge">Find someone in MIT gear + selfie</div>
-        <div class="cell">Take professional headshot at photo booth</div>
+        <div class="cell"><div class="challenge-text">Find someone with same birth month</div></div>
+        <div class="cell"><div class="challenge-text">Tweet about Research Slam in ≤18 words</div></div>
+        <div class="cell"><div class="challenge-text">Post on LinkedIn + tag @MITAIConference @MITAS</div></div>
+        <div class="cell beaver-challenge"><div class="challenge-text">Find someone in MIT gear + selfie</div></div>
+        <div class="cell"><div class="challenge-text">Take professional headshot at photo booth</div></div>
 
-        <div class="cell">Attend cofounder speed matching (12:30-2 PM)</div>
-        <div class="cell">Attend a workshop</div>
-        <div class="cell free-space">FREE SPACE<br>Show badge</div>
-        <div class="cell">Get business cards from 3+ booths</div>
-        <div class="cell">Create a Genspark account (show profile)</div>
+        <div class="cell"><div class="challenge-text">Attend cofounder speed matching (12:30-2 PM)</div></div>
+        <div class="cell"><div class="challenge-text">Attend a workshop</div></div>
+        <div class="cell free-space"><div class="challenge-text">FREE SPACE<br>Show badge</div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 3+ booths</div></div>
+        <div class="cell"><div class="challenge-text">Create a Genspark account (show profile)</div></div>
 
-        <div class="cell fire-challenge">Spot TIM-A the Beaverette in any slide</div>
-        <div class="cell">Collect swag from 5+ vendor booths</div>
-        <div class="cell">Scan 5+ LinkedIn QR codes (new connections)</div>
-        <div class="cell">Coffee & Connect photo with 3+ new contacts</div>
-        <div class="cell fire-challenge">Explain smoots OR have them explained to you (photo proof)</div>
+        <div class="cell fire-challenge"><div class="challenge-text">Spot TIM-A the Beaverette in any slide</div></div>
+        <div class="cell"><div class="challenge-text">Collect swag from 5+ vendor booths</div></div>
+        <div class="cell"><div class="challenge-text">Scan 5+ LinkedIn QR codes (new connections)</div></div>
+        <div class="cell"><div class="challenge-text">Coffee & Connect photo with 3+ new contacts</div></div>
+        <div class="cell fire-challenge"><div class="challenge-text">Explain smoots OR have them explained to you (photo proof)</div></div>
 
-        <div class="cell">Selfie with robot demo + post on LinkedIn</div>
-        <div class="cell iphone-challenge">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div>
-        <div class="cell">Get business cards from 2+ real VCs</div>
-        <div class="cell">Share Shishir Mehrotra insight on LinkedIn</div>
-        <div class="cell">Watch 3+ hackathon demos and rank by ARR</div>
+        <div class="cell"><div class="challenge-text">Selfie with robot demo + post on LinkedIn</div></div>
+        <div class="cell iphone-challenge"><div class="challenge-text">Attend 8:15 AM Expert Round Table + post photo on LinkedIn & tag @MITAI @MITAS<br><strong style="color: #ff14f0; font-size: 0.8em;">WIN iPHONE 17!</strong></div></div>
+        <div class="cell"><div class="challenge-text">Get business cards from 2+ real VCs</div></div>
+        <div class="cell"><div class="challenge-text">Share Shishir Mehrotra insight on LinkedIn</div></div>
+        <div class="cell"><div class="challenge-text">Watch 3+ hackathon demos and rank by ARR</div></div>
     </div>
 </div>
 
